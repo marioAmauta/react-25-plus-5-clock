@@ -3,7 +3,7 @@ import { LengthButton, LengthControl, LengthTitle, LengthValue } from './compone
 import { ELEMENTS_IDS, soundSource } from './lib/constants'
 import { useApp } from './lib/useApp'
 
-export default function App() {
+export function App() {
   const {
     state,
     timerTitle,
@@ -30,8 +30,8 @@ export default function App() {
               <LengthButton
                 id={ELEMENTS_IDS.breakDecrement}
                 disabled={state.play}
-                icon={<IconArrowDown />}
                 onClick={handleBreakDecrease}
+                icon={<IconArrowDown />}
               />
               <LengthValue
                 id={ELEMENTS_IDS.breakLength}
@@ -41,8 +41,8 @@ export default function App() {
               <LengthButton
                 id={ELEMENTS_IDS.breakIncrement}
                 disabled={state.play}
-                icon={<IconArrowUp />}
                 onClick={handleBreakIncrease}
+                icon={<IconArrowUp />}
               />
             </LengthControl>
           </section>
@@ -55,8 +55,8 @@ export default function App() {
               <LengthButton
                 id={ELEMENTS_IDS.sessionDecrement}
                 disabled={state.play}
-                icon={<IconArrowDown />}
                 onClick={handleSessionDecrease}
+                icon={<IconArrowDown />}
               />
               <LengthValue
                 id={ELEMENTS_IDS.sessionLength}
@@ -65,20 +65,13 @@ export default function App() {
               <LengthButton
                 id={ELEMENTS_IDS.sessionIncrement}
                 disabled={state.play}
-                icon={<IconArrowDown />}
                 onClick={handleSessionIncrease}
+                icon={<IconArrowDown />}
               />
             </LengthControl>
           </section>
         </div>
-        <section
-          className='
-            border-8 border-[#13353A] rounded-3xl
-            p-5
-            text-center
-            w-60
-          '
-        >
+        <section className='border-8 border-[#13353A] rounded-3xl p-5 text-center w-60'>
           <p
             id={ELEMENTS_IDS.timerLabel}
             className='text-3xl font-semibold mb-6'

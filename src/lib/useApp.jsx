@@ -33,12 +33,15 @@ export function useApp() {
 
   function handlePlay() {
     clearTimeout(timeout)
+
     dispatch({ type: ACTIONS.PLAY })
   }
 
   function handleReset() {
     clearTimeout(timeout)
+
     dispatch({ type: ACTIONS.RESET })
+
     const audio = document.getElementById('beep')
     audio.pause()
     audio.currentTime = 0
@@ -50,6 +53,7 @@ export function useApp() {
 
       if (!state.timeLeft && state.timingType === timingTypes.SESSION) {
         dispatch({ type: ACTIONS.CHANGE_TO_BREAK })
+
         audio.play()
       }
 
@@ -64,6 +68,7 @@ export function useApp() {
     function clock() {
       if (state.play) {
         timeout
+
         resetTimer()
       } else {
         clearTimeout(timeout)

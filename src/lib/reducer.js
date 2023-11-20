@@ -3,7 +3,9 @@ import { ACTIONS, initialState, lengthLimit, timingTypes } from './constants'
 export function timerReducer(state, { type }) {
   switch (type) {
     case ACTIONS.BREAK_DECREASE: {
-      if (state.breakLength === lengthLimit.min) return state
+      if (state.breakLength === lengthLimit.min) {
+        return state
+      }
 
       return {
         ...state,
@@ -12,7 +14,9 @@ export function timerReducer(state, { type }) {
     }
 
     case ACTIONS.BREAK_INCREASE: {
-      if (state.breakLength === lengthLimit.max) return state
+      if (state.breakLength === lengthLimit.max) {
+        return state
+      }
 
       return {
         ...state,
@@ -21,7 +25,9 @@ export function timerReducer(state, { type }) {
     }
 
     case ACTIONS.SESSION_DECREASE: {
-      if (state.sessionLength === lengthLimit.min) return state
+      if (state.sessionLength === lengthLimit.min) {
+        return state
+      }
 
       return {
         ...state,
@@ -31,7 +37,9 @@ export function timerReducer(state, { type }) {
     }
 
     case ACTIONS.SESSION_INCREASE: {
-      if (state.sessionLength === lengthLimit.max) return state
+      if (state.sessionLength === lengthLimit.max) {
+        return state
+      }
 
       return {
         ...state,

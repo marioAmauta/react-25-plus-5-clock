@@ -16,26 +16,18 @@ LengthTitle.propTypes = {
 }
 
 export function LengthControl({ children }) {
-  return (
-    <div
-      className='
-        flex justify-center items-center gap-4
-      '
-    >
-      {children}
-    </div>
-  )
+  return <div className='flex justify-center items-center gap-4'>{children}</div>
 }
 LengthControl.propTypes = {
   children: PropTypes.node.isRequired
 }
 
-export function LengthButton({ id, disabled, icon, onClick }) {
+export function LengthButton({ id, disabled, onClick, icon }) {
   return (
     <button
       id={id}
-      onClick={onClick}
       disabled={disabled}
+      onClick={onClick}
     >
       {icon}
     </button>
@@ -44,15 +36,15 @@ export function LengthButton({ id, disabled, icon, onClick }) {
 LengthButton.propTypes = {
   id: PropTypes.string.isRequired,
   disabled: PropTypes.bool.isRequired,
-  icon: PropTypes.node.isRequired,
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
+  icon: PropTypes.node.isRequired
 }
 
 export function LengthValue({ id, value }) {
   return (
     <span
-      className=' text-4xl'
       id={id}
+      className='text-4xl'
     >
       {value}
     </span>
